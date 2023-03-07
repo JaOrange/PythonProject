@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <script src="{% static 'js/echarts.js' %}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">默认显示北京，太原，南京，上海，沈阳房屋数量</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">折线图</div>
+        <div class="panel-body">
+            <div id="m1" style="width: 100%;height:400px;"></div>
+
+            <script type="text/javascript">
+                var myChart = echarts.init(document.getElementById('m1'));
+                var option = {
+                        xAxis: {
+                            type: 'category',
+                            data: ["北京", "上海", "广州", "深圳", "太原", "沈阳"]
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [
+                            {
+                                data: [180, 210, 90, 180, 120, 90],
+                                type: 'line'
+                            }
+                        ]
+                    };
+                myChart.setOption(option);
+
+            </script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">柱状图</div>
+                <div class="panel-body">
+                    <div id="main" style="width: 100%;height:400px;"></div>
+
+                    <script type="text/javascript">
+                        var myChart = echarts.init(document.getElementById('main'));
+                        var option = {
+                            title: {
+                                text: '房屋数量',
+                            },
+                            tooltip: {},
+                            legend: {
+                                data: ['数量']
+                            },
+                            xAxis: {
+                                data: ["北京", "上海", "广州", "深圳", "太原", "沈阳"]
+                            },
+                            yAxis: {},
+                            series: [
+                                {
+                                    name: '数量',
+                                    type: 'bar',
+                                    data: [180, 210, 90, 180, 120, 90]
+                                }
+                            ]
+                        };
+                        myChart.setOption(option);
+
+                    </script>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">饼图</div>
+                <div class="panel-body">
+                    <div id="m3" style="width: 100%;height:400px;"></div>
+
+                    <script type="text/javascript">
+                        var myChart = echarts.init(document.getElementById('m3'));
+                        var option = {
+                              series: [
+                                {
+                                  type: 'pie',
+                                  data: [
+                                    {
+                                      value: 180,
+                                      name: '北京'
+                                    },
+                                    {
+                                      value: 210,
+                                      name: '上海'
+                                    },
+                                    {
+                                      value: 90,
+                                      name: '广州'
+                                    },
+                                                                  {
+                                      value: 180,
+                                      name: '深圳'
+                                    },
+                                    {
+                                      value: 120,
+                                      name: '太原'
+                                    },
+                                    {
+                                      value: 1548,
+                                      name: '沈阳'
+                                    }
+                                  ]
+                                }
+                              ]
+                            };
+                        myChart.setOption(option);
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script href="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script href="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

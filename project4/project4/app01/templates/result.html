@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">二手房信息</a>
+        </div>
+    </div>
+</nav>
+
+<div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">基于线性回归的预测结果</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">房价</label>
+                    <div class="col-sm-1">
+                        <div>{{ price }}万元</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">与您的要求相似的房屋信息</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>位置</th>
+                    <th>户型</th>
+                    <th>面积</th>
+                    <th>朝向</th>
+                    <th>装修</th>
+                    <th>楼层</th>
+                    <th>售价</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item.location }}</td>
+                        <td>{{ item.houseType }}</td>
+                        <td>{{ item.area }}</td>
+                        <td>{{ item.direction }}</td>
+                        <td>{{ item.furnish }}</td>
+                        <td>{{ item.floor }}</td>
+                        <td>{{ item.totalPrice }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script href="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script href="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

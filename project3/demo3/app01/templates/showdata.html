@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">二手房信息</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/refresh/">更新</a></li>
+            <li><a href="/show/">展示</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">二手房信息</div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>开发商</th>
+                    <th>户型</th>
+                    <th>面积</th>
+                    <th>朝向</th>
+                    <th>装修</th>
+                    <th>楼层</th>
+                    <th>建造时间</th>
+                    <th>结构</th>
+                    <th>售价</th>
+                    <th>单价</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in data %}
+                    <tr>
+                        <th>{{ item.id }}</th>
+                        <td>{{ item.builder }}</td>
+                        <td>{{ item.houseType }}</td>
+                        <td>{{ item.area }}</td>
+                        <td>{{ item.direction }}</td>
+                        <td>{{ item.decoration }}</td>
+                        <td>{{ item.floor }}</td>
+                        <td>{{ item.year }}</td>
+                        <td>{{ item.structure }}</td>
+                        <td>{{ item.total_price }}</td>
+                        <td>{{ item.unit_price }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul style="float: left;" class="pagination">
+            {{ page_string }}
+        </ul>
+    </div>
+</div>
+
+<script href="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script href="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.min.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">二手房信息</a>
+        </div>
+    </div>
+</nav>
+
+
+<div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">请输入您想预测的房屋的相关信息</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">面积</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" placeholder="area" name="area">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">户型</label>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="bedroom">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">室</label>
+                        </div>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="livingroom">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">厅</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">朝向</label>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="north">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">北</label>
+                        </div>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="south">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">南</label>
+                        </div>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="east">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">东</label>
+                        </div>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="west">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label class="control-label">西</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">楼层</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" name="floor">
+                                <option value="1">高楼层</option>
+                                <option value="2">中楼层</option>
+                                <option value="3">低楼层</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">装修</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" name="zhuangxiu">
+                                <option value="1">毛坯</option>
+                                <option value="2">精装</option>
+                                <option value="3">简装</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">位置</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" name="location">
+                                <option value="1">于洪</option>
+                                <option value="2">和平</option>
+                                <option value="3">大东</option>
+                                <option value="4">沈河</option>
+                                <option value="5">浑南</option>
+                                <option value="6">皇姑</option>
+                                <option value="7">铁西</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">新旧程度</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" name="time">
+                                <option value="1">2015年之后建</option>
+                                <option value="2">2005~2015年建</option>
+                                <option value="3">2005年之前建</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-5 col-sm-5">
+                            <button type="submit" class="btn btn-primary">确 定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script href="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script href="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
