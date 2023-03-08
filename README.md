@@ -1,4 +1,4 @@
-# 东北大学Python编程与实验分析实验
+# 东北大学Python编程与数据分析实验
 ![1](https://user-images.githubusercontent.com/123424732/223425762-6ae3da67-9d99-4061-9321-9e24759faeda.jpg)
 
 ![2](https://user-images.githubusercontent.com/123424732/223425788-a5d04c61-c057-45aa-813f-d2f20d787de3.jpg)
